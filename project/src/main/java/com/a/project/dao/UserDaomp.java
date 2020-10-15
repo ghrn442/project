@@ -18,6 +18,17 @@ public class UserDaomp implements UserDao{
 		
 	}
 
+
+	
+	public JoinUser selectlogin(JoinUser joinuser) {
+		
+		return sst.selectOne("joinuser.selectlogin", joinuser);
+	}
+
+
+	
+	
+
 	
 
 

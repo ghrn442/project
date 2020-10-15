@@ -212,12 +212,12 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="joinform.do">회원가입</a></li>
-        <li><a href="">영상보기</a></li>
-        <li><a href="#pricing">문의사항</a></li>
+        <li><a href="book.do">책 보기</a></li>
+        <li><a href="list.do">목록</a></li>
         <li><a href="boardform.do">글 작성</a></li>
-        <li><button type="button" class="btn" data-toggle="modal" data-target="#myModal">로그인</button></li>
+        <li><a href="logform.do">로그인</a></li>
       </ul>
-      </div>
+     </div>
 	 </div>
   </nav>
   <hr>

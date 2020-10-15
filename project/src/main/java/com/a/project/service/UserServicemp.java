@@ -18,6 +18,17 @@ public class UserServicemp implements UserService{
 		
 	}
 
+
+	
+	public JoinUser selectlogin(JoinUser joinuser) {
+		
+		return ud.selectlogin(joinuser);
+	}
+
+
+	
+
+
 	
 
 

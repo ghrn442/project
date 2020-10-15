@@ -12,25 +12,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test=<% request.getParameter("id");%>==${joinuser.id}
-&&<% request.getParameter("password");%>==${joinuser.id}>
-	<script type="text/javascript">
-		alert('로그인에 성공하였습니다.');
-		location.href="main.do"
-	</script>
+<c:if test="${joinuser != null }">
+<script type="text/javascript">
+alert('로그인에 성공하였습니다.');
+location.href="main.do";
+</script>
 </c:if>
-<c:if test=<% request.getParameter("id");%>!=${joinuser.id}>
-	<script type="text/javascript">
-		alert('아이디가 없습니다.회원가입후 이용해주시기를 바랍니다.');
-		location.href="joinform.do"
-	</script>
+<c:if test="${joinuser == null }">
+<script type="text/javascript">
+alert('로그인에 실패하였습니다.아이디와 비밀번호를 확인해주세요.');
+history.go(-1);
+</script>
 </c:if>
-<c:if test=<% request.getParameter("password");%>!=${joinuser.password}>
-	<script type="text/javascript">
-		alert('비밀번호가 다릅니다.');
-		history.go(-1);
-	</script>
-</c:if>
-
 </body>
 </html>

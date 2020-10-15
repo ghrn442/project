@@ -5,8 +5,10 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 	<typeAliases>
 		<typeAlias alias="joinuser" type="com.a.project.model.JoinUser"/>
+		<typeAlias alias="board" type="com.a.project.model.p_board"/>
 	</typeAliases>
 	<mappers>
 		<mapper	resource="JoinUser.xml" />
+		<mapper resource="Board.xml"/>
 	</mappers>
 </configuration>

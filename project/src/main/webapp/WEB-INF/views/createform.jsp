@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-	<%@include file="header.jsp" %>  
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -195,87 +191,53 @@
     }
   }
   </style>
-
-
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container" align="center">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="main.do">BrainTrade</a>
-    </div>
-     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="joinform.do">회원가입</a></li>
-        <li><a href="book.do">책 보기</a></li>
-        <li><a href="list.do">목록</a></li>
-        <li><a href="boardform.do">글 작성</a></li>
-        <li><a href="logform.do">로그인</a></li>
-      </ul>
-     </div>
-	 </div>
-  </nav>
-  <hr>
-  <hr>
- <div class="container">
-	<div class="col"></div>
-		<div class="col">
-			<div class="jumbotron" style="padding-top: 20px;" align="center">
-			<form action="loginsuccess.do" method="post">
-				<h2 style ="text-align:center" class="join">로그인</h2>
 
-				<div class="form-group">
-					아이디:<input type="text" class="form-control" placeholder="아이디를 입력하세요." name="id" maxlength="20">
-				</div>
-				<div class="form-group">
-					비밀번호:<input type="password" class="form-control" placeholder="비밀번호를 입력하세요." name="password" maxlength="20">
-				</div>
-				
-				
-				<input type="submit" class="btn btn-primary form-control" value="로그인" >
-				<a href="joinform.do">회원가입이 안되었으면 눌러주세요.</a>
-			</form>
-			</div>		
-		</div>
-	<div class="col"></div>
-<div id="contact" class="container-fluid bg-grey">
-  <h2 class="text-center">문의사항</h2>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>저희는 문의사항 24시간 접수대기입니다.</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span>(회사주소) Chicago, USA</p>
-      <p><span class="glyphicon glyphicon-phone"></span>(회사번호) +00 1515151515</p>
-      <p><span class="glyphicon glyphicon-envelope"></span>(회사메일) myemail@something.com</p>
-    </div>
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="title" name="title" placeholder="title" type="text" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">등록</button>
-        </div>
-      </div>
+<body>
+
+<form class="form-horizontal" action="/action_page.php">
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="email">-제외하고 카드 12자리를 입력하세요:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="text" placeholder="카드번호를 입력하세요">
     </div>
   </div>
-</div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">카드비밀번호:</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="pwd" placeholder="비밀번호 4자리를 입력해주세요">
+   </div>
+  </div>
+  <div class="form-group">
+     <span style="float: left; margin-right:20px;">
+        <label for ="bank">카드은행사: </label>
+        <select id="bank" name="bank" size="1">
+            <option value="" selected="selected">카드선택</option>
+            <option value="국민">국민</option>
+            <option value="신한">신한</option>
+            <option value="우리">우리</option>
+            <option value="농협">농협</option>
+            <option value="IBK">IBK</option>
+        </select>
+    </span>
+    </div>
+    
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">결제</button>
+    </div>
+  </div>
+</form>
+
+</body>
+
 
 <!-- Image of location/map -->
 <img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
 
 <footer class="container-fluid text-center">
 </footer>
+
 <script>
 $(document).ready(function(){
   // Add smooth scrolling to all links in navbar + footer link
@@ -284,10 +246,8 @@ $(document).ready(function(){
     if (this.hash !== "") {
       // Prevent default anchor click behavior
       event.preventDefault();
-
       // Store hash
       var hash = this.hash;
-
       // Using jQuery's animate() method to add smooth page scroll
       // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
       $('html, body').animate({
@@ -303,7 +263,6 @@ $(document).ready(function(){
   $(window).scroll(function() {
     $(".slideanim").each(function(){
       var pos = $(this).offset().top;
-
       var winTop = $(window).scrollTop();
         if (pos < winTop + 600) {
           $(this).addClass("slide");
@@ -312,5 +271,4 @@ $(document).ready(function(){
   });
 })
 </script>
-</body>
 </html>

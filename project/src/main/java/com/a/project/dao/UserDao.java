@@ -6,6 +6,8 @@ public interface UserDao {
 
 	void insert(JoinUser joinuser);
 
+	JoinUser selectlogin(JoinUser joinuser);
+
 	
 
 	

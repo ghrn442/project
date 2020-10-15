@@ -14,8 +14,8 @@
 		values(#{bno},#{id,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{name,jdbcType=VARCHAR},#{email,jdbcType=VARCHAR},#{nickname,jdbcType=VARCHAR})
 	</insert>
 	
-	<select id="">
-		select * from joinuser where bno =#{bno} 
+	<select id="selectlogin" resultType="joinuser">
+		select id , password from joinuser where id =#{id} and password=#{password}
 	</select>
 	
 </mapper>

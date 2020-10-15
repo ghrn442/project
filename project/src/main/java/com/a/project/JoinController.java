@@ -3,9 +3,11 @@ package com.a.project;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.a.project.model.JoinUser;
 import com.a.project.service.UserService;
@@ -22,10 +24,7 @@ public class JoinController {
 		return "main";
 		
 	}
-	@RequestMapping("loginsuccess")
-	public String loginsuccess() {
-		return "loginsuccess";
-	}
+	
 	
 	@RequestMapping("joinform")
 	public String joinform(Model model,HttpServletRequest request) {
@@ -50,7 +49,8 @@ public class JoinController {
 		
 		return "joinsuccess";
 		
-		
 	}
 	
+	
+
 }

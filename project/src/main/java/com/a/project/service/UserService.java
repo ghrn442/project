@@ -6,6 +6,8 @@ public interface UserService {
 
 	void insert(JoinUser joinuser);
 
+	JoinUser selectlogin(JoinUser joinuser);
+
 
 
 	
